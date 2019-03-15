@@ -66,6 +66,9 @@
     <Compile Include="Assets\Character_Feats.cs" />
     <Compile Include="Assets\Character_Skills.cs" />
     <Compile Include="Assets\Chararcter_Attributes.cs" />
+    <Compile Include="Assets\HighSchoolSlot.cs" />
+    <Compile Include="Assets\MainSystem.cs" />
+    <Compile Include="Assets\RadarChart\Scripts\RadarPolygon.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Marco/Documents/CannonFodder/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
