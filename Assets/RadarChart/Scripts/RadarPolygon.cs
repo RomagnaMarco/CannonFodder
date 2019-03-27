@@ -21,7 +21,23 @@
         public float lineWidth = 0.5f;
         public bool useDefaultLength = true;
         public float lineLength = 50;
+        
+        /// /////////////////////////////////
+        //my Work
+        public RadarPolygon script;
+        public void Start() 
+        {
+            script.value[0] = 0.50f;
+            script.value[1] = 0.50f;
+            script.value[2] = 0.50f;
+            script.value[3] = 0.50f;
+            script.value[4] = 0.50f;
+            script.value[5] = 0.50f;
+        }
 
+        
+        /// ////////////////////////////////
+        
         public override Texture mainTexture
         {
             get

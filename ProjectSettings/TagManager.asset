@@ -10,6 +10,7 @@ TagManager:
   - CreateCharPg2
   - CreateCharPg3
   - CreateCharPg4
+  - RadarChartDataScript
   layers:
   - Default
   - TransparentFX

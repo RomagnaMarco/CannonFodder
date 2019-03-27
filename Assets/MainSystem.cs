@@ -63,4 +63,9 @@ public class MainSystem : MonoBehaviour {
         Screens[num].SetActive(value);
     }
 
+    public void ButtonCharCreate() 
+    {
+        DisplayMenu(false);
+        DisplayCharCreate(1, true);
+    }
 }
