@@ -55,8 +55,58 @@ public class HighSchoolSlot : MonoBehaviour {
         */
     }
 
+    private void checkSport(string sport)
+    {
+        switch(sport)
+        {
+            case "Football":
 
+                break;
+            
+            case "Boxing":
 
+                break;
+            case "Lifting":
+
+                break;
+            case "BaseBall":
+
+                break;
+            case "Track & Field":
+
+                break;
+            case "Debate Club":
+
+                break;
+            case "Drama":
+
+                break;
+            case "Chess Club":
+
+                break;
+            case "Academics":
+
+                break;
+            case "Hunting":
+
+                break;
+            case "Boy Scouts":
+
+                break;
+            case "Marching Band":
+
+                break;
+            case "Language Class":
+
+                break;
+            case "LifeGuard":
+
+                break;
+
+        }
+
+    }
+    
     /*
         STR + END
            FootBall
