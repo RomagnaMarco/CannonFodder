@@ -1,60 +1,25 @@
 
-/
-FootBallY1
-Max: "You have a natural knack for football and you dominate your peers."
-[
+"You have a natural knack for football and you dominate your peers."
 Dodge=2,Grapple=2,Throw=1,Sprint=1,
-[
-Avg: "The first year on the football team went well."
-[
+"The first year on the football team went well."
 Dodge=1,Grapple=1,Throw=1,Sprint=1,
-[
-Min: "Lack of skill and usefulness forces you into being the team’s waterboy."
-[
+"Lack of skill and usefulness forces you into being the team’s waterboy."
 Grapple=1,Sprint=1,
-[
-/
-
-FootBallY2
-Max: "A good year has caught the attention of your coach landing you in the varsity team early."
-[
+"A good year has caught the attention of your coach landing you in the varsity team early."
 Grapple=2,Endurance=2,Strength=1,
-[
-Avg: "Another year of hard work on the team has paid off."
-[
+"Another year of hard work on the team has paid off."
 Grapple=1,Endurance=1,Strength=1,
-[
-Min: "Underperformance makes this season a struggle."
-[
+"Underperformance makes this season a struggle."
 Grapple=1,Endurance=1,
-[
-/
-
-FootBallY3
-Max: "Your excellent performance this season serves to inspire your peers."
-[
+"Your excellent performance this season serves to inspire your peers."
 Grapple=2,Dodge=2,Charisma=1,Sprint=1,Throw=1,
-[
-Avg: "Your dedication to the team elevates you to varsity."
-[
+"Your dedication to the team elevates you to varsity."
 Grapple=1,Dodge=1,Sprint=1,Throw=1,
-[
-Min: "While put in varsity, you struggle to handle the challenges of a more competitive team."
-[
+"While put in varsity, you struggle to handle the challenges of a more competitive team."
 Dodge=1,Sprint=1,Throw=1,
-[
-/
-
-FootBallY4
-Max: "Four years of football has paid off as you're labeled the MVP and celebrated by the school."
-[
+"Four years of football has paid off as you're labeled the MVP and celebrated by the school."
 Grapple=2,Endurance=1,Strength=2,
-[
-Avg: "Through hard work and perseverance, you finish your fourth year of football stronger than ever."
-[
+"Through hard work and perseverance, you finish your fourth year of football stronger than ever."
 Grapple=1,Endurance=1,Strength=1,
-[
-Min: "Tragedy strikes as on your Senior year you sustain a head  injury sacking your season."
-[
+"Tragedy strikes as on your Senior year you sustain a head  injury sacking your season."
 Grapple=1,Intelligence=-1,Strength=1,
-[
