@@ -33,6 +33,13 @@ public class Parse : MonoBehaviour
         lineNumData += (2 * roll) - 1; //acounts for roll
         lineNumFlavor = lineNumData - 1; // go up 1 line for flavor text
 
+        //grabs relevant strings from file.
+        string[] lines = file.Split('\n');
+        string lineFlavor = lines[lineNumFlavor-1]; //must -1 because index shift from start 1 to start index 0
+        string lineData = lines[lineNumData-1]; //same as above
+
+        //Flavor line is fine as is at this point
+        // must now indentify skills/stats/feats/ and values
     }
 
     /*
@@ -61,4 +68,6 @@ public class Parse : MonoBehaviour
     23    Y4 Low Flavor text
     24    Y4 Low Stats
     */
+
+
 }
