@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
+using System;
 
 public class Parse : MonoBehaviour
 {
@@ -40,6 +42,24 @@ public class Parse : MonoBehaviour
 
         //Flavor line is fine as is at this point
         // must now indentify skills/stats/feats/ and values
+
+        string[] data = lineData.Split(','); // this seperates the skills, and stats into stuff like "athletics=1"
+
+        //now seperate the data into its respective label and values
+        //assume the value can not be greater than 9. <---------------------------------------------VERY IMPORTANT!!!!
+        //for this approach to work, you need it to be one digit.
+
+        string[] dataLabel = new string[data.Length];
+        int[] dataValue = new int[data.Length];
+        for (int i = 0; i < data.Length; i++)
+        {
+           dataLabel[i] = data[i].Substring(0, data[i].Length - 2); // ignores =# and puts rest into array.
+           dataValue[i] = Int32.Parse(data[i].Substring( data[i].Length - 1, data[i].Length)); //grabs #
+        }
+        //now you have an array of datalabels and datavalues, that correspond to each other based off index.
+
+        
+
     }
 
     /*
