@@ -23,7 +23,7 @@ public class Parse : MonoBehaviour
 
     }
 
-    private void ParseTxt(string file, int year, int roll)
+    private ParsedInfo ParseTxt(string file, int year, int roll)
     {
         //high = 1
         //avg = 2
@@ -58,7 +58,9 @@ public class Parse : MonoBehaviour
         }
         //now you have an array of datalabels and datavalues, that correspond to each other based off index.
 
-        
+        ParsedInfo info = new ParsedInfo(lineFlavor, dataLabel, dataValue);
+
+        return info;
 
     }
 
