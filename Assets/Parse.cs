@@ -7,13 +7,11 @@ using System;
 public class Parse : MonoBehaviour
 {
 
-    string file;
-
     // Use this for initialization
     void Start()
     {
-        file = "";
-
+        
+        
 
     }
 
@@ -23,7 +21,7 @@ public class Parse : MonoBehaviour
 
     }
 
-    private ParsedInfo ParseTxt(string file, int year, int roll)
+     ParsedInfo ParseTxt(string file, int year, int roll)
     {
         //high = 1
         //avg = 2
