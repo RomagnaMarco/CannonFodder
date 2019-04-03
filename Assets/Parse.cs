@@ -21,7 +21,7 @@ public class Parse : MonoBehaviour
 
     }
 
-     ParsedInfo ParseTxt(string file, int year, int roll)
+     public ParsedInfo ParseTxt(string file, int year, int roll)
     {
         //high = 1
         //avg = 2

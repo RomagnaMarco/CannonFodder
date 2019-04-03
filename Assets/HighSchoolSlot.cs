@@ -68,21 +68,8 @@ public class HighSchoolSlot : MonoBehaviour {
     void Update()
     {
 
-        if(sportIndex == 0)
-        {
-            sportIndex = 14; 
-        }
-        if(sportIndex == 15)
-        {
-            sportIndex = 1;
-        }
-
-        if( sports[sportIndex] != ObservedSport) // got changed by someone clicking left or right. 
-        {
-            ObservedSport = sports[sportIndex]; //change ObservedSport to new sport
-        }
-
-        DisplaySport(sports[sportIndex]); 
+       
+       
 
 
         /*
@@ -99,16 +86,16 @@ public class HighSchoolSlot : MonoBehaviour {
 
     private void determineDisplay(string file, string name)
     {
-        /*
-        valuesHigh = parser.ParseTxt(file, sportYears[yearIndex], 1).getValue(); 
-        labelsHigh = parser.ParseTxt(file, sportYears[yearIndex], 1).getLabel();
+        
+        valuesHigh = parser.ParseTxt(file, ObservedYear, 1).getValue(); 
+        labelsHigh = parser.ParseTxt(file, ObservedYear, 1).getLabel();
 
-        valuesAvg = parser.ParseTxt(file, sportYears[yearIndex], 1).getValue();
-        labelsAvg = parser.ParseTxt(file, sportYears[yearIndex], 1).getLabel();
+        valuesAvg = parser.ParseTxt(file, ObservedYear, 2).getValue();
+        labelsAvg = parser.ParseTxt(file, ObservedYear, 2).getLabel();
 
-        valuesLow = parser.ParseTxt(file, sportYears[yearIndex], 1).getValue();
-        labelsLow = parser.ParseTxt(file, sportYears[yearIndex], 1).getLabel();
-        */
+        valuesLow = parser.ParseTxt(file, ObservedYear, 3).getValue();
+        labelsLow = parser.ParseTxt(file, ObservedYear, 3).getLabel();
+        
     }
 
     private void DisplaySport(string sport)
@@ -171,7 +158,7 @@ public class HighSchoolSlot : MonoBehaviour {
         }
 
     }
-    
+
     /*
         STR + END
            FootBall
@@ -196,4 +183,42 @@ public class HighSchoolSlot : MonoBehaviour {
 
 
      */
+
+
+    //UI buttons
+    public void pushNext() 
+    {
+        sportIndex++;
+
+        if (sportIndex == 15)
+        {
+            sportIndex = 1;
+        }
+
+        ObservedSport = sports[sportIndex]; //change ObservedSport to new sport
+        DisplaySport(sports[sportIndex]);
+    }
+
+    public void pushPrevious()
+    {
+        sportIndex--;
+
+        if (sportIndex == 0)
+        {
+            sportIndex = 14;
+        }
+
+        ObservedSport = sports[sportIndex]; //change ObservedSport to new sport
+        DisplaySport(sports[sportIndex]);
+    }
+
+    public void YearAdvance() //click on avg, high, or low, settings
+    {
+
+    }
+
+    public void YearDelete()
+    {
+
+    }
 }
