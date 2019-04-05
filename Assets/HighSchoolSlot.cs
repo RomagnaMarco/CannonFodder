@@ -68,10 +68,6 @@ public class HighSchoolSlot : MonoBehaviour {
     void Update()
     {
 
-       
-       
-
-
         /*
         if they add the sport
             if sport[i], add sport[i] to selected list
@@ -83,38 +79,65 @@ public class HighSchoolSlot : MonoBehaviour {
 
         */
     }
+    
 
-    private void determineDisplay(string file, string name)
+    //UI buttons
+    public void pushNext() 
     {
-        
-        valuesHigh = parser.ParseTxt(file, ObservedYear, 1).getValue(); 
-        labelsHigh = parser.ParseTxt(file, ObservedYear, 1).getLabel();
+        sportIndex++;
 
-        valuesAvg = parser.ParseTxt(file, ObservedYear, 2).getValue();
-        labelsAvg = parser.ParseTxt(file, ObservedYear, 2).getLabel();
+        if (sportIndex == 15)
+        {
+            sportIndex = 1;
+        }
 
-        valuesLow = parser.ParseTxt(file, ObservedYear, 3).getValue();
-        labelsLow = parser.ParseTxt(file, ObservedYear, 3).getLabel();
-        
+        ObservedSport = sports[sportIndex]; //change ObservedSport to new sport
+        DisplaySport(sports[sportIndex]);
     }
+
+    public void pushPrevious()
+    {
+        sportIndex--;
+
+        if (sportIndex == 0)
+        {
+            sportIndex = 14;
+        }
+
+        ObservedSport = sports[sportIndex]; //change ObservedSport to new sport
+        DisplaySport(sports[sportIndex]);
+    }
+
+    public void YearAdvance() //click on avg, high, or low, settings
+    {
+
+    }
+
+    public void YearDelete()
+    {
+
+    }
+
+    //end of UI Buttons
+
 
     private void DisplaySport(string sport)
     {
 
-        switch(sport)
+        switch (sport)
         {
             case "Football":
                 //show sport/club label
                 //show year
 
-               //determineDisplay Method
+                //determineDisplay Method
 
                 //for High Avg Low
                 //  show skills
                 //  show stats
                 //  show feats
                 break;
-            
+
             case "Boxing":
 
                 break;
@@ -159,66 +182,18 @@ public class HighSchoolSlot : MonoBehaviour {
 
     }
 
-    /*
-        STR + END
-           FootBall
-           Boxing
-           Lifting
-        Dex
-           BaseBall
-           Track & Feild
-        CHA
-            Debate Club
-            Drama
-        INT
-            Chess Club
-            Academics
-        Survival
-            Hunting
-            Boy Scouts
-        Misc
-            Marching Band
-            Langauge class
-            LifeGuard
-
-
-     */
-
-
-    //UI buttons
-    public void pushNext() 
+    private void determineDisplay(string file, string name) //grabs Information in the form of Strings and int Arrays.
     {
-        sportIndex++;
 
-        if (sportIndex == 15)
-        {
-            sportIndex = 1;
-        }
+        valuesHigh = parser.ParseTxt(file, ObservedYear, 1).getValue();
+        labelsHigh = parser.ParseTxt(file, ObservedYear, 1).getLabel();
 
-        ObservedSport = sports[sportIndex]; //change ObservedSport to new sport
-        DisplaySport(sports[sportIndex]);
-    }
+        valuesAvg = parser.ParseTxt(file, ObservedYear, 2).getValue();
+        labelsAvg = parser.ParseTxt(file, ObservedYear, 2).getLabel();
 
-    public void pushPrevious()
-    {
-        sportIndex--;
-
-        if (sportIndex == 0)
-        {
-            sportIndex = 14;
-        }
-
-        ObservedSport = sports[sportIndex]; //change ObservedSport to new sport
-        DisplaySport(sports[sportIndex]);
-    }
-
-    public void YearAdvance() //click on avg, high, or low, settings
-    {
+        valuesLow = parser.ParseTxt(file, ObservedYear, 3).getValue();
+        labelsLow = parser.ParseTxt(file, ObservedYear, 3).getLabel();
 
     }
 
-    public void YearDelete()
-    {
-
-    }
 }
