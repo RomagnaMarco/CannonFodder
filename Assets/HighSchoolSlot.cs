@@ -113,9 +113,10 @@ public class HighSchoolSlot : MonoBehaviour {
 
     }
 
-    public void YearDelete()
+    public void SportDelete()
     {
-
+        //check if deleted sport year was a prereq for another sport year on the list
+        // if it was a prereq, remove preceding years.
     }
 
     //end of UI Buttons
