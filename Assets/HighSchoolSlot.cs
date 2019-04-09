@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class HighSchoolSlot : MonoBehaviour {
 
-    private string[] sports;
-    private int[] sportYears;
-
+    private List<SelectedSport> selections;
     private string ObservedSport;
     private int ObservedYear;
 
+    private int selectionCAP;
+
     private int sportIndex;
     private int yearIndex;
+    private int selectionIndex;
+
+    private string[] sports;
+    private int[] sportYears;
 
     Parse parser;
 
@@ -24,10 +28,15 @@ public class HighSchoolSlot : MonoBehaviour {
     int[] valuesLow;
     string[] labelsLow;
 
+    
+
 
     // Use this for initialization
     void Start () {
         parser = new Parse();
+
+        selections = new List<SelectedSport>();
+        selectionCAP = 7;
 
         sports = new string[15];
         
@@ -61,6 +70,9 @@ public class HighSchoolSlot : MonoBehaviour {
         ObservedSport = sports[sportIndex];
         yearIndex = 1;
         ObservedYear = sportYears[yearIndex];
+        selectionIndex = 0;
+        
+
 
     }
 
@@ -92,7 +104,7 @@ public class HighSchoolSlot : MonoBehaviour {
         }
 
         ObservedSport = sports[sportIndex]; //change ObservedSport to new sport
-        DisplaySport(sports[sportIndex]);
+        DisplaySport(ObservedSport);
     }
 
     public void pushPrevious()
@@ -105,18 +117,44 @@ public class HighSchoolSlot : MonoBehaviour {
         }
 
         ObservedSport = sports[sportIndex]; //change ObservedSport to new sport
-        DisplaySport(sports[sportIndex]);
+        DisplaySport(ObservedSport);
     }
 
     public void YearAdvance() //click on avg, high, or low, settings
     {
+        
+        if (selectionIndex == selectionCAP)
+        {
+            //do nothing when pushed basically. It wont activate if selection list is full.
+            
+            //maybe later have an pop up telling them to either delete a choice, or continue on.
+        }
+        else
+        {
+            selections.Add(new SelectedSport(ObservedYear, ObservedSport));
+            selectionIndex++; 
+        }
+
+        
+
 
     }
 
-    public void SportDelete()
+    public void SportDelete() // add some sort of criteria to determine which sport they are deleting from the list. ie button 3 => sport 2 in array.
     {
         //check if deleted sport year was a prereq for another sport year on the list
         // if it was a prereq, remove preceding years.
+
+        if (selectionIndex == 0)
+        {
+            //do nothing when pushed basically. It wont activate if selection list is empty
+        }
+        else
+        {
+            //go through listy from 0 to selection index basically and see if any number Year greater than it exists. IF there is one. Delete that one too. 
+                //for each delete, selectionIndex goes down by 1.
+        }
+        
     }
 
     //end of UI Buttons

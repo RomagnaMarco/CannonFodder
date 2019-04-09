@@ -71,6 +71,7 @@
     <Compile Include="Assets\Parse.cs" />
     <Compile Include="Assets\ParsedInfo.cs" />
     <Compile Include="Assets\RadarChart\Scripts\RadarPolygon.cs" />
+    <Compile Include="Assets\SelectedSport.cs" />
     <None Include="Assets\Parsable txt files\FootBall.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Marco/Documents/CannonFodder/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
