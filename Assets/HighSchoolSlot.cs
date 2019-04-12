@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HighSchoolSlot : MonoBehaviour {
 
@@ -28,7 +29,7 @@ public class HighSchoolSlot : MonoBehaviour {
     int[] valuesLow;
     string[] labelsLow;
 
-    
+    string[] taggedName;
 
 
     // Use this for initialization
@@ -37,6 +38,17 @@ public class HighSchoolSlot : MonoBehaviour {
 
         selections = new List<SelectedSport>();
         selectionCAP = 7;
+
+        taggedName = new string[7];  //name for selection Text (buttons that show whats in the selections list and if you push them, they are removed from the list)
+        taggedName[0] = "Selection1";
+        taggedName[1] = "Selection2";
+        taggedName[2] = "Selection3";
+        taggedName[3] = "Selection4";
+        taggedName[4] = "Selection5";
+        taggedName[5] = "Selection6";
+        taggedName[6] = "Selection7";
+        taggedName[7] = "Selection8";
+
 
         sports = new string[15];
         
@@ -113,20 +125,19 @@ public class HighSchoolSlot : MonoBehaviour {
 
     public void YearAdvance() //click on avg, high, or low, settings
     {
-        
+
         if (selectionIndex == selectionCAP)
         {
             //do nothing when pushed basically. It wont activate if selection list is full.
-            
+
             //maybe later have an pop up telling them to either delete a choice, or continue on.
         }
         else
         {
             selections.Add(new SelectedSport(ObservedYear, ObservedSport));
-            selectionIndex++; 
+            selectionIndex++;
         }
-
-        
+        DisplaySelections();
 
 
     }
@@ -157,13 +168,29 @@ public class HighSchoolSlot : MonoBehaviour {
             for (int i = 0; i < deletedSelections.Count;i++)
             {
                 selections.RemoveAt(deletedSelections[i]); //deletes stored indexes assigned to be removed that we got in the deletedSelections list
+                selectionIndex--; // each time you delete a sport, the index goes down.
             }
         }
-        
+        DisplaySelections();
     }
 
     //end of UI Buttons
 
+    private void DisplaySelections()
+    {
+        for(int i = 0; i < selections.Count; i++) //fills selected sports in 
+        {
+            GameObject.Find(taggedName[i]).GetComponentInChildren<Text>().text =  selections[i].getSport();
+            //re-displays selections
+        }
+        if ( selections.Count < taggedName.Length) //if we didnt have all selections filled, fill the rest with their choice Number
+        {
+            for(int i = selections.Count; i < taggedName.Length;i++)
+            {
+                GameObject.Find(taggedName[i]).GetComponentInChildren<Text>().text = "Choice " + i;
+            }
+        }
+    }
 
     private void DisplaySport(string sport)
     {
