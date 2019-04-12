@@ -11,6 +11,14 @@ TagManager:
   - CreateCharPg3
   - CreateCharPg4
   - RadarChartDataScript
+  - Selection1
+  - Selection2
+  - Selection3
+  - Selection4
+  - Selection5
+  - Selection6
+  - Selection7
+  - Selection8
   layers:
   - Default
   - TransparentFX

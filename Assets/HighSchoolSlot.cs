@@ -80,16 +80,7 @@ public class HighSchoolSlot : MonoBehaviour {
     void Update()
     {
 
-        /*
-        if they add the sport
-            if sport[i], add sport[i] to selected list
-                add values of sport[i] to overall stats.
-
-        if they remove the sport
-            if sport[i], delete sport[i] from selected list
-                delete values of sport[i] from overall values
-
-        */
+      //need to update values upon deletion and addition of selections
     }
     
 
@@ -151,8 +142,22 @@ public class HighSchoolSlot : MonoBehaviour {
         }
         else
         {
-            //go through listy from 0 to selection index basically and see if any number Year greater than it exists. IF there is one. Delete that one too. 
-                //for each delete, selectionIndex goes down by 1.
+            //go through list from 0 to selection index basically and see if any number Year greater than it exists. IF there is one. Delete that one too. 
+            //for each delete, selectionIndex goes down by 1.
+            List<int> deletedSelections = new List<int>();
+
+            for( int i = 0; i < selectionIndex; i++)
+            {
+                if(selections[i].getYear() < yearIndex) //collects indexes to be deleted. Can't directly delete or there is risk of a concurrent modification error
+                {
+                    deletedSelections.Add(i);
+                }
+
+            }
+            for (int i = 0; i < deletedSelections.Count;i++)
+            {
+                selections.RemoveAt(deletedSelections[i]); //deletes stored indexes assigned to be removed that we got in the deletedSelections list
+            }
         }
         
     }
@@ -223,6 +228,7 @@ public class HighSchoolSlot : MonoBehaviour {
 
     private void determineDisplay(string file, string name) //grabs Information in the form of Strings and int Arrays.
     {
+        //note that name = Name of sport.
 
         valuesHigh = parser.ParseTxt(file, ObservedYear, 1).getValue();
         labelsHigh = parser.ParseTxt(file, ObservedYear, 1).getLabel();
