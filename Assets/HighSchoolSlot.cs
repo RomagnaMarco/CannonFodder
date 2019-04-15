@@ -123,9 +123,11 @@ public class HighSchoolSlot : MonoBehaviour {
         DisplaySport(ObservedSport);
     }
 
-    public void YearAdvance() //click on avg, high, or low, settings
+    public void YearAdvance(int RNG) //click on avg, high, or low, settings
     {
-
+        //High == 3
+        //Avg  == 2
+        //Low  == 1
         if (selectionIndex == selectionCAP)
         {
             //do nothing when pushed basically. It wont activate if selection list is full.
@@ -140,9 +142,11 @@ public class HighSchoolSlot : MonoBehaviour {
             }
             else
             {
-                selections.Add(new SelectedSport(ObservedYear, ObservedSport));
-                selectionIndex++;
-                ObservedYear += 1;
+                
+                    selections.Add(new SelectedSport(ObservedYear, ObservedSport, RNG));
+                    selectionIndex++;
+                    ObservedYear += 1;
+                
             }
             
         }
