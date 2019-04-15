@@ -40,14 +40,14 @@ public class HighSchoolSlot : MonoBehaviour {
         selectionCAP = 7;
 
         taggedName = new string[7];  //name for selection Text (buttons that show whats in the selections list and if you push them, they are removed from the list)
-        taggedName[0] = "Selection1";
-        taggedName[1] = "Selection2";
-        taggedName[2] = "Selection3";
-        taggedName[3] = "Selection4";
-        taggedName[4] = "Selection5";
-        taggedName[5] = "Selection6";
-        taggedName[6] = "Selection7";
-        taggedName[7] = "Selection8";
+        taggedName[0] = "Selection 1";
+        taggedName[1] = "Selection 2";
+        taggedName[2] = "Selection 3";
+        taggedName[3] = "Selection 4";
+        taggedName[4] = "Selection 5";
+        taggedName[5] = "Selection 6";
+        taggedName[6] = "Selection 7";
+        taggedName[7] = "Selection 8";
 
 
         sports = new string[15];
@@ -72,7 +72,7 @@ public class HighSchoolSlot : MonoBehaviour {
         sportYears = new int[15];
         for(int i = 0; i < sportYears.Length; i++)
         {
-            sportYears[i] = 1;
+            sportYears[i] = 0;
             //note that 0 and 15 dont matter and are just for reference of the sports string array.
         }
 
@@ -134,15 +134,24 @@ public class HighSchoolSlot : MonoBehaviour {
         }
         else
         {
-            selections.Add(new SelectedSport(ObservedYear, ObservedSport));
-            selectionIndex++;
+            if(yearIndex == 4)
+            {
+                //do nothing as year for this sport is maxed.
+            }
+            else
+            {
+                selections.Add(new SelectedSport(ObservedYear, ObservedSport));
+                selectionIndex++;
+                ObservedYear += 1;
+            }
+            
         }
         DisplaySelections();
 
 
     }
 
-    public void SportDelete() // add some sort of criteria to determine which sport they are deleting from the list. ie button 3 => sport 2 in array.
+    public void SportDelete(int selectedSelection) // 3 => sport 2 in array.
     {
         //check if deleted sport year was a prereq for another sport year on the list
         // if it was a prereq, remove preceding years.
@@ -165,10 +174,26 @@ public class HighSchoolSlot : MonoBehaviour {
                 }
 
             }
-            for (int i = 0; i < deletedSelections.Count;i++)
+            
+            for (int i = 0; i < deletedSelections.Count;i++) //now delete each part 1 by 1. Mostly will just delete one thing.
             {
+                //recall what was stored in that selection
+                string rememberIndexName = selections[deletedSelections[i]].getSport();
+                int rememberIndex = 0; // 0 is default and will change
+                //check what index it is in the array.
+                for (int j = 0; j < sports.Length; j++)
+                {
+                    if(sports[j] == rememberIndexName) //if names match
+                    {
+                        rememberIndex = j;
+                    }
+                }
+                //now decremement the year by one of that sport's index
+                sportYears[rememberIndex]--;
+
                 selections.RemoveAt(deletedSelections[i]); //deletes stored indexes assigned to be removed that we got in the deletedSelections list
                 selectionIndex--; // each time you delete a sport, the index goes down.
+
             }
         }
         DisplaySelections();
@@ -187,7 +212,7 @@ public class HighSchoolSlot : MonoBehaviour {
         {
             for(int i = selections.Count; i < taggedName.Length;i++)
             {
-                GameObject.Find(taggedName[i]).GetComponentInChildren<Text>().text = "Choice " + i;
+                GameObject.Find(taggedName[i]).GetComponentInChildren<Text>().text = "Selection " + i;
             }
         }
     }
