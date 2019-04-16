@@ -21,11 +21,13 @@ public class Parse : MonoBehaviour
 
     }
 
-     public ParsedInfo ParseTxt(string file, int year, int roll)
+     public ParsedInfo ParseTxt(string file, int year, int roll, bool txt)
     {
+        //for roll
         //high = 1
         //avg = 2
         //low = 3
+
 
         int lineNumData; //line to parse data values such as stats and skills and feats from
         int lineNumFlavor; //line to parse flavor text from
@@ -47,18 +49,39 @@ public class Parse : MonoBehaviour
         //assume the value can not be greater than 9. <---------------------------------------------VERY IMPORTANT!!!!
         //for this approach to work, you need it to be one digit.
 
-        string[] dataLabel = new string[data.Length];
-        int[] dataValue = new int[data.Length];
-        for (int i = 0; i < data.Length; i++)
+
+        //if txt == false. then get values as ints, else get everything as string
+        if( txt == true)
         {
-           dataLabel[i] = data[i].Substring(0, data[i].Length - 2); // ignores =# and puts rest into array.
-           dataValue[i] = Int32.Parse(data[i].Substring( data[i].Length - 1, data[i].Length)); //grabs #
+            string[] dataLabel = new string[data.Length];
+            string[] dataValue = new string[data.Length];
+            for (int i = 0; i < data.Length; i++)
+            {
+                dataLabel[i] = data[i].Substring(0, data[i].Length - 2); // ignores =# and puts rest into array.
+                dataValue[i] = data[i].Substring(data[i].Length - 1, data[i].Length); //grabs # as string
+            }
+            //now you have an array of datalabels and datavalues, that correspond to each other based off index.
+
+            ParsedInfo info = new ParsedInfo(lineFlavor, dataLabel, dataValue);
+
+            return info;
         }
-        //now you have an array of datalabels and datavalues, that correspond to each other based off index.
+        else //when txt == false. we return actual int values
+        {
+            string[] dataLabel = new string[data.Length];
+            int[] dataValue = new int[data.Length];
+            for (int i = 0; i < data.Length; i++)
+            {
+                dataLabel[i] = data[i].Substring(0, data[i].Length - 2); // ignores =# and puts rest into array.
+                dataValue[i] = Int32.Parse(data[i].Substring(data[i].Length - 1, data[i].Length)); //grabs #
+            }
+            //now you have an array of datalabels and datavalues, that correspond to each other based off index.
 
-        ParsedInfo info = new ParsedInfo(lineFlavor, dataLabel, dataValue);
+            ParsedInfo info = new ParsedInfo(lineFlavor, dataLabel, dataValue);
 
-        return info;
+            return info;
+        }
+        
 
     }
 
