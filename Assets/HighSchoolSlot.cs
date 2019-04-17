@@ -286,14 +286,14 @@ public class HighSchoolSlot : MonoBehaviour {
     {
         //note that name = Name of sport.
 
-        valuesHigh = parser.ParseTxt(file, ObservedYear, 1).getValue();
-        labelsHigh = parser.ParseTxt(file, ObservedYear, 1).getLabel();
+        valuesHigh = parser.ParseTxt(file, ObservedYear, 1, true).getValue();
+        labelsHigh = parser.ParseTxt(file, ObservedYear, 1, true).getLabel();
 
-        valuesAvg = parser.ParseTxt(file, ObservedYear, 2).getValue();
-        labelsAvg = parser.ParseTxt(file, ObservedYear, 2).getLabel();
+        valuesAvg = parser.ParseTxt(file, ObservedYear, 2, true).getValue();
+        labelsAvg = parser.ParseTxt(file, ObservedYear, 2, true).getLabel();
 
-        valuesLow = parser.ParseTxt(file, ObservedYear, 3).getValue();
-        labelsLow = parser.ParseTxt(file, ObservedYear, 3).getLabel();
+        valuesLow = parser.ParseTxt(file, ObservedYear, 3, true).getValue();
+        labelsLow = parser.ParseTxt(file, ObservedYear, 3, true).getLabel();
 
     }
 
