@@ -1804,7 +1804,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Choice
+  m_Text: Selection 4
 --- !u!222 &296216681
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1883,7 +1883,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Choice
+  m_Text: Selection 8
 --- !u!222 &317185372
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2039,7 +2039,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sport/Club
+  m_Text: 'Sport/Club   Year #'
 --- !u!222 &362155628
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3316,7 +3316,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Choice
+  m_Text: Selection 7
 --- !u!222 &706331069
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3962,7 +3962,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Choice
+  m_Text: Selection 6
 --- !u!222 &792878590
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4474,7 +4474,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Choice
+  m_Text: Selection 5
 --- !u!222 &904106855
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6090,7 +6090,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Choice
+  m_Text: Selection 2
 --- !u!222 &1225538254
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6863,7 +6863,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'High
+  m_Text: 'Low
 
 
     Skills + Stats'
@@ -9592,7 +9592,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Choice
+  m_Text: Selection 1
 --- !u!222 &1861786774
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10059,7 +10059,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Low
+  m_Text: 'High
 
 
     Skills + Stats'
@@ -10353,7 +10353,7 @@ GameObject:
   - component: {fileID: 1945463137}
   - component: {fileID: 1945463136}
   m_Layer: 5
-  m_Name: Sport_Select_Button_High
+  m_Name: Sport_Select_Button_Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10640,7 +10640,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Choice
+  m_Text: Selection 3
 --- !u!222 &1976547874
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10925,7 +10925,7 @@ GameObject:
   - component: {fileID: 2041936963}
   - component: {fileID: 2041936962}
   m_Layer: 5
-  m_Name: Sport_Select_Button_Low
+  m_Name: Sport_Select_Button_High
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
