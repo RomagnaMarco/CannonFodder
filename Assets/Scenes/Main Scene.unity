@@ -1982,7 +1982,7 @@ GameObject:
   - component: {fileID: 362155627}
   m_Layer: 5
   m_Name: Sport_Name
-  m_TagString: Untagged
+  m_TagString: SportName
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2092,7 +2092,7 @@ GameObject:
   - component: {fileID: 375896896}
   m_Layer: 5
   m_Name: Sport_Select_Button_Average
-  m_TagString: Untagged
+  m_TagString: AvgDataDisplay
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10354,7 +10354,7 @@ GameObject:
   - component: {fileID: 1945463136}
   m_Layer: 5
   m_Name: Sport_Select_Button_Low
-  m_TagString: Untagged
+  m_TagString: LowDataDisplay
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10926,7 +10926,7 @@ GameObject:
   - component: {fileID: 2041936962}
   m_Layer: 5
   m_Name: Sport_Select_Button_High
-  m_TagString: Untagged
+  m_TagString: HighDataDisplay
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

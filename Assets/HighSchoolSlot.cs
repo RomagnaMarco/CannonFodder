@@ -83,8 +83,8 @@ public class HighSchoolSlot : MonoBehaviour {
         yearIndex = 1;
         ObservedYear = sportYears[yearIndex];
         selectionIndex = 0;
-        
 
+        DisplaySport(ObservedSport); //initializes display
 
     }
 
@@ -236,6 +236,13 @@ public class HighSchoolSlot : MonoBehaviour {
                 //  show skills
                 //  show stats
                 //  show feats
+
+
+
+
+
+                //changeTextDisplay Method
+                
                 break;
 
             case "Boxing":
@@ -295,6 +302,14 @@ public class HighSchoolSlot : MonoBehaviour {
         valuesLow = parser.ParseTxt(file, ObservedYear, 3, true).getValue();
         labelsLow = parser.ParseTxt(file, ObservedYear, 3, true).getLabel();
 
+    }
+
+    private void changeTextDisplay(string high, string avg, string low, string name)
+    {
+        GameObject.Find("LowDataDisplay").GetComponentInChildren<Text>().text = low;
+        GameObject.Find("AvgDataDisplay").GetComponentInChildren<Text>().text = avg;
+        GameObject.Find("HighDataDisplay").GetComponentInChildren<Text>().text = high;
+        GameObject.Find("SportNameDisplay").GetComponentInChildren<Text>().text = name;
     }
 
 }

@@ -19,6 +19,10 @@ TagManager:
   - Selection6
   - Selection7
   - Selection8
+  - SportName
+  - HighDataDisplay
+  - AvgDataDisplay
+  - LowDataDisplay
   layers:
   - Default
   - TransparentFX
