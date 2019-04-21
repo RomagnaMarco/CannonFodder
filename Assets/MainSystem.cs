@@ -68,4 +68,10 @@ public class MainSystem : MonoBehaviour {
         DisplayMenu(false);
         DisplayCharCreate(1, true);
     }
+
+    public void ButtonCCToMenu() //character creation 1 to menu screen
+    {
+        DisplayMenu(true);
+        DisplayCharCreate(1, false);
+    }
 }
