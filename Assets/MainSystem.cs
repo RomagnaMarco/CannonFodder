@@ -7,6 +7,8 @@ public class MainSystem : MonoBehaviour {
     
 
     GameObject[] Screens;
+    ArrayList characterlist;
+    Character currentCharacter; // that we are looking at.
 
 
     // Use this for initialization
@@ -15,6 +17,7 @@ public class MainSystem : MonoBehaviour {
 
         Debug.Log("Fetching Display Screens.");
         Screens = new GameObject[5];
+
 
        Screens[0] = GameObject.FindGameObjectWithTag("MenuScreen");
        Screens[1] = GameObject.FindGameObjectWithTag("CreateCharPg1");
@@ -28,6 +31,7 @@ public class MainSystem : MonoBehaviour {
         Debug.Log("Deactivating Unecessary Screens.");
         StartGame();
 
+        characterlist = new ArrayList();
 
         Debug.Log("MainSystem Booted up.");
     }
@@ -67,11 +71,17 @@ public class MainSystem : MonoBehaviour {
     {
         DisplayMenu(false);
         DisplayCharCreate(1, true);
+        Character newChar = new Character();
+        characterlist.Add(newChar); 
+        currentCharacter = newChar;
     }
 
     public void ButtonCCToMenu() //character creation 1 to menu screen
     {
         DisplayMenu(true);
         DisplayCharCreate(1, false);
+
+        //condition where character is finished means it saves, otherwise
+        characterlist.Remove(currentCharacter); //doesn't save it basically.
     }
 }
