@@ -31,6 +31,7 @@ public class HighSchoolSlot : MonoBehaviour {
 
     string[] taggedName;
 
+    string football = System.IO.File.ReadAllText(@"C:\Users\Marco\Documents\CannonFodder\Assets\Parsable txt files\FootBall.txt");
 
     // Use this for initialization
     void Start () {
@@ -231,17 +232,15 @@ public class HighSchoolSlot : MonoBehaviour {
                 //show year
 
                 //determineDisplay Method
+                determineDisplay(football);
 
                 //for High Avg Low
                 //  show skills
                 //  show stats
                 //  show feats
 
-
-
-
-
                 //changeTextDisplay Method
+                changeTextDisplay(arrangeToString(labelsHigh), arrangeToString(labelsAvg), arrangeToString(labelsLow), sport); 
                 
                 break;
 
@@ -289,9 +288,8 @@ public class HighSchoolSlot : MonoBehaviour {
 
     }
 
-    private void determineDisplay(string file, string name) //grabs Information in the form of Strings and int Arrays.
+    private void determineDisplay(string file) //grabs Information in the form of Strings and int Arrays.
     {
-        //note that name = Name of sport.
 
         valuesHigh = parser.ParseTxt(file, ObservedYear, 1, true).getValue();
         labelsHigh = parser.ParseTxt(file, ObservedYear, 1, true).getLabel();
@@ -310,6 +308,21 @@ public class HighSchoolSlot : MonoBehaviour {
         GameObject.Find("AvgDataDisplay").GetComponentInChildren<Text>().text = avg;
         GameObject.Find("HighDataDisplay").GetComponentInChildren<Text>().text = high;
         GameObject.Find("SportNameDisplay").GetComponentInChildren<Text>().text = name;
+
     }
 
+    private string arrangeToString(string[] labels) //sorts array of string into a string with several lines
+    {
+        string arrangedString = labels[0];
+        if (labels.Length > 1)
+        {
+            for (int i = 1; i < labels.Length; i++)
+            {
+                arrangedString += "\r\n" + labels[i]; //puts next part on a new line
+            }
+        }
+        
+
+        return arrangedString;
+    }
 }

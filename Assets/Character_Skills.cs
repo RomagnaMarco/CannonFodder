@@ -70,7 +70,7 @@ public class Character_Skills : MonoBehaviour {
     }
     public int getAtheletics()
     {
-        return Atheltics;
+        return Athletics;
     }
 
     public void modifyStealth(int num)
