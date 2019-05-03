@@ -156,7 +156,7 @@ public class HighSchoolSlot : MonoBehaviour {
 
     }
 
-    public void SportDelete(int selectedSelection) // 3 => sport 2 in array.
+    public void SportDelete(int selectedSelection) // Remember that the the third slot would be sport 2 in array.
     {
         //check if deleted sport year was a prereq for another sport year on the list
         // if it was a prereq, remove preceding years.
@@ -325,4 +325,5 @@ public class HighSchoolSlot : MonoBehaviour {
 
         return arrangedString;
     }
+
 }
